@@ -1,0 +1,43 @@
+---
+import data from "../data.json";
+
+const top30 = data.sort((a, b) => b.stars - a.stars).slice(0, 30);
+
+const defaultCell = "text-start px-4 py-2 ";
+
+const starFormatter = Intl.NumberFormat("en", {
+	notation: "compact",
+	maximumFractionDigits: 1,
+});
+
+function formatStars(stars: number) {
+	return starFormatter.format(stars).replace('K', 'k')
+}
+---
+
+<div class="border-2 rounded-xl overflow-hidden">
+	<table class="table-auto w-full">
+		<thead class="border-b-2">
+			<tr>
+				<th class={defaultCell}>
+					<i class="bx bxs-star"></i>
+				</th>
+				<th class={defaultCell}>Name</th>
+				<th class={defaultCell}>License</th>
+			</tr>
+		</thead>
+		<tbody>
+			{
+				top30.map(function (repo, i) {
+					return (
+						<tr class="odd:bg-gray-100">
+							<td class={defaultCell}>{formatStars(repo.stars)}</td>
+							<td class={defaultCell}>{repo.name}</td>
+							<td class={defaultCell}>{repo.license}</td>
+						</tr>
+					);
+				})
+			}
+		</tbody>
+	</table>
+</div>

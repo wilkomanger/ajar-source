@@ -1,0 +1,17 @@
+[
+    {
+        "stars": 123,
+        "name": "Some Other Project",
+        "license": "BSL 1.1"
+    },
+    {
+        "stars": 234234,
+        "name": "That Thing",
+        "license": "BSL 1.1"
+    },
+    {
+        "stars": 1000,
+        "name": "Cool Project",
+        "license": "Sad License :("
+    }
+]

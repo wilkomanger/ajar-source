@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Checker from '../components/Checker.astro';
+import TopRepos from '../components/TopRepos.astro';
+---
+
+<Layout title="Ajar-source">
+	<main class="flex flex-col">
+
+		<h1 class="text-8xl text-center font-bold mt-24"><i class="bx bx-door-open"></i><br/>Ajar-source</h1>
+		<p class="text-xl mt-8">Software which is not closed-source, but not quite open, either.</p>
+		<p class="mt-8">
+			Not all software that's publically available is open-source.
+			For example, a project with a BSL 1.1 license is not open-source.
+			This license does grant you
+			rights similar to an open-source license (viewing, modifying, redistributing),
+			but only under certain conditions.
+		</p>
+		<div class="mt-8 w-full">
+			<Checker/>
+		</div>
+		<div class="mt-8 w-full">
+			<TopRepos/>
+		</div>
+	</main>
+</Layout>
